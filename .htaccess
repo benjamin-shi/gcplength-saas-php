@@ -10,3 +10,6 @@ RewriteRule ^about-us$ /about-us.php
 RewriteRule ^api/gcplength/?(\S*)$ /api.gs1.GCPLength.php$1
 
 RewriteRule ^api/refresh/?$ /api.gs1.GCPLength.refresh.php
+
+RewriteRule ^copyright/?$ /copyright.php
+RewriteRule ^copy/?$ /copyright.php
