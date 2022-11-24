@@ -1,0 +1,12 @@
+RewriteEngine On
+
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+RewriteRule ^contact-us$ /contact-us.php
+
+RewriteRule ^about-us$ /about-us.php
+
+RewriteRule ^api/gcplength/?(\S*)$ /api.gs1.GCPLength.php$1
+
+RewriteRule ^api/refresh/?$ /api.gs1.GCPLength.refresh.php
