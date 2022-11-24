@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+env:
+  version: v1.0
+  tag: gcplength-saas-php
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+          docker build . --file Dockerfile --tag $tag
+          docker login --username benjaminshi --password Aa%123qweasd
+          docker image tag php-web benjaminshi/$tag:latest
+          docker image tag php-web benjaminshi/$tag:$version.$(date +'%Y%m%d')
+          docker image tag php-web benjaminshi/$tag:$version
+          docker image push --all-tags benjaminshi/$tag
+          
