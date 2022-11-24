@@ -21,10 +21,10 @@ if ('' == $err)
     $requestBody = @file_get_contents('php://input');
     $json_data = @json_decode($requestBody, true);
     
-    $prefix = getArrayValByKeys($json_data, ['GCP', 'gcp', 'GTIN', 'gtin','prefix', 'p', 'key', 'k', 'gs1', 'id']);
+    $prefix = getArrayValByKeys($json_data, ['GCP', 'gcp', 'GTIN', 'gtin','prefix', 'p', 'key', 'k', 'gs1', 'id', 'Code', 'code']);
     if ((!$prefix) || ('' == $prefix))
     {
-        $prefix = getArrayValByKeys($_REQUEST, ['GCP', 'gcp', 'GTIN', 'gtin','prefix', 'p', 'key', 'k', 'gs1', 'id']);
+        $prefix = getArrayValByKeys($_REQUEST, ['GCP', 'gcp', 'GTIN', 'gtin','prefix', 'p', 'key', 'k', 'gs1', 'id', 'Code', 'code']);
 
         if (!$prefix) $prefix = '';
     }

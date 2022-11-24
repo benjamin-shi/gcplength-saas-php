@@ -7,7 +7,9 @@ RUN apt update \
     && a2enmod rewrite
 
 WORKDIR /var/www/html
-ADD 
+RUN rm -rf *
+ADD . .
+RUN chmod -R 777 data gs1.download
 
 EXPOSE 80/tcp
 EXPOSE 443/tcp
